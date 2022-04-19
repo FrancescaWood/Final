@@ -21,6 +21,7 @@ public class Game  extends JPanel implements Runnable, KeyListener, MouseListene
 		this.addMouseMotionListener(this);
 		key =-1; 
 		background = new ImageIcon("background2.jfif");
+		//123
 		bone = new ImageIcon ("bone1-removebg-preview.png");
 		dog = new ImageIcon ("dog1-removebg-preview.png");
 		x=0;
