@@ -13,7 +13,8 @@ public class Game  extends JPanel implements Runnable, KeyListener, MouseListene
 	private ImageIcon background, bone, dog;
 	
 	
-	//test
+	//FRANCESCA
+	//test 2
 	public Game() {
 		new Thread(this).start();	
 		this.addKeyListener(this);
