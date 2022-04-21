@@ -15,6 +15,7 @@ public class Game  extends JPanel implements Runnable, KeyListener, MouseListene
 	
 	//FRANCESCA
 	//test 2
+	//camilla wood 
 	public Game() {
 		new Thread(this).start();	
 		this.addKeyListener(this);
