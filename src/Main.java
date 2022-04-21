@@ -7,12 +7,12 @@ public class Main extends JFrame{
 	private static final int HEIGHT=1600;
 	
 	public Main () {
-		super("FInal Project");
+		super("Final Project");
 		setSize(WIDTH, HEIGHT);
 		Game play = new Game();
 		((Component) play).setFocusable(true);
 		
-		Color RoyalBlue = new Color(22,13,193);
+		Color RoyalBlue = new Color(127,205,255);
 		
 		
 		setBackground(RoyalBlue);
