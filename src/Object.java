@@ -18,6 +18,7 @@ public class Object {
 		shark4 = "shark 4.png";
 		shark5 = "shark 5.png";
 		
+		
 	}
 	
 	public Object(int xV, int yV, int dxV, int dyV) {

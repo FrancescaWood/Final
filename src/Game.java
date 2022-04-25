@@ -10,8 +10,8 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 	
 	private BufferedImage back; 
 	private int key; 
-	private ImageIcon shark11, shark22, shark33, shark44, shark55;
-	private Object shark1, shark2, shark3, shark4, shark5;
+	private ImageIcon shark11, shark22, shark33, shark44, shark55, shark66, shark77, shark88;
+	private Object shark1, shark2, shark3, shark4, shark5, shark6, shark7, shark8;
 	
 	//new
 	
@@ -26,6 +26,7 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 		shark3 = new Object();
 		shark4 = new Object();
 		shark5 = new Object();
+		
 
 	//	shark1 = new Object(x, y, spped, 1);
 		shark1 = new Object(100, 200, 2, 0);
@@ -37,6 +38,7 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 		shark33 = new ImageIcon (shark1.getshark3());
 		shark44 = new ImageIcon (shark1.getshark4());
 		shark55 = new ImageIcon (shark1.getshark5());
+		
 		
 		
 	}
@@ -78,6 +80,7 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 		g2d.drawImage(shark33.getImage(), shark3.getX(), shark3.getY(), shark3.getH(), shark3.getW(), this);
 		g2d.drawImage(shark44.getImage(), shark4.getX(), shark4.getY(), shark4.getH(), shark4.getW(), this);
 		g2d.drawImage(shark55.getImage(), shark5.getX(), shark5.getY(), shark5.getH(), shark5.getW(), this);
+		
 
 		shark1.moveShark1();
 		shark2.moveShark2();
