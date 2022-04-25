@@ -12,9 +12,9 @@ public class Object {
 		h=150;
 		dx=1;
 		dy=1;
-		shark1 = "OIP__1_-removebg-preview.png";
-		shark2 = "iceboy-removebg-preview.png";
-		shark3 = "ice-skating-clipart-10-removebg-preview.png";
+		shark1 = "shark 1.png";
+		shark2 = "shark 2.jfif";
+		shark3 = "shark 3.png";
 		
 	}
 	
@@ -25,9 +25,9 @@ public class Object {
 		h=150;
 		dx=dxV;
 		dy=dyV;
-		shark1 = "OIP__1_-removebg-preview.png";
-		shark2 = "iceboy-removebg-preview.png";
-		shark3 = "ice-skating-clipart-10-removebg-preview.png";
+		shark1 = "shark 1.png";
+		shark2 = "shark 2.jfif";
+		shark3 = "shark 3.png";
 		
 		
 		
