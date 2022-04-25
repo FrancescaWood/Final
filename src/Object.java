@@ -13,7 +13,7 @@ public class Object {
 		dx=1;
 		dy=1;
 		shark1 = "shark 1.png";
-		shark2 = "shark 2.jfif";
+		shark2 = "shark 2.png";
 		shark3 = "shark 3.png";
 		
 	}
@@ -26,7 +26,7 @@ public class Object {
 		dx=dxV;
 		dy=dyV;
 		shark1 = "shark 1.png";
-		shark2 = "shark 2.jfif";
+		shark2 = "shark 2.png";
 		shark3 = "shark 3.png";
 		
 		
