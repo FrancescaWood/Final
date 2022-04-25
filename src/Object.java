@@ -15,6 +15,8 @@ public class Object {
 		shark1 = "shark 1.png";
 		shark2 = "shark 2.png";
 		shark3 = "shark 3.png";
+		shark4 = "shark 4.png";
+		shark5 = "shark 5.png";
 		
 	}
 	
@@ -28,6 +30,8 @@ public class Object {
 		shark1 = "shark 1.png";
 		shark2 = "shark 2.png";
 		shark3 = "shark 3.png";
+		shark4 = "shark 4.png";
+		shark5 = "shark 5.png";
 		
 		
 		
@@ -65,9 +69,8 @@ public class Object {
 		if (x >= 1500 || x <=20) {
 			dx*= -1;
 		}
-		if (y >= 400 || y <= 300) {
-			dy*= -1;  
-	}}
+		  
+	}
 	public void moveShark2() {
 		x+=dx;
 		y+=dy;
@@ -76,9 +79,8 @@ public class Object {
 		if (x >= 1500 || x <=20) {
 			dx*= -1;
 		}
-		if (y >= 300 || y <= 200) {
-			dy*= -1; 
-	}}
+		
+	}
 		public void moveShark3() {
 			x+=dx;
 			y+=dy;
@@ -87,9 +89,6 @@ public class Object {
 			if (x <= 20 || x >=1600) {
 				dx*= -1;
 			}
-			if (y >= 1300 || y <= 1400) {
-				dy*= -1; 
-		}
 	}
 	
 }
