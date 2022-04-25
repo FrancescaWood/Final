@@ -8,8 +8,8 @@ public class Object {
 	public Object() {
 		x=600;
 		y=450;
-		w=150;
-		h=150;
+		w=70;
+		h=70;
 		dx=1;
 		dy=1;
 		shark1 = "shark 1.png";
@@ -23,8 +23,8 @@ public class Object {
 	public Object(int xV, int yV, int dxV, int dyV) {
 		x=xV;
 		y=yV;
-		w=150;
-		h=150;
+		w=70;
+		h=70;
 		dx=dxV;
 		dy=dyV;
 		shark1 = "shark 1.png";
@@ -73,7 +73,7 @@ public class Object {
 		y+=dy;
 		//System.out.println("x=" + x);
 		
-		if (x >= 1500 || x <=20) {
+		if (x >= 1600 || x <=20) {
 			dx*= -1;
 		}
 		  
@@ -83,7 +83,7 @@ public class Object {
 		y+=dy;
 		//System.out.println("x=" + x);
 		
-		if (x >= 1500 || x <=20) {
+		if (x >= 1600 || x <=20) {
 			dx*= -1;
 		}
 		
@@ -103,23 +103,19 @@ public class Object {
 			y+=dy;
 			//System.out.println("x=" + x);
 			
-			if (x >= 773 || x <=550) {
+			if (x >= 1600 || x <=20) {
 				dx*= -1;
 			}
-			if (y >= 480 || y <= 400) {
-				dy*= -1; 
-		}}
+	}
 		
 		public void moveShark5() {
 			x+=dx;
 			y+=dy;
 			//System.out.println("x=" + x);
 			
-			if (x >= 773 || x <=550) {
+			if (x >= 1600 || x <=20) {
 				dx*= -1;
 			}
-			if (y >= 480 || y <= 400) {
-				dy*= -1; 
-		}}
+	}
 	
 }
