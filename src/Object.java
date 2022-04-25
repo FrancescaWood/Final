@@ -57,6 +57,13 @@ public class Object {
 	public String getshark3() {
 		return shark3;
 	}
+	public String getshark4() {
+		return shark4;
+	}
+	public String getshark5() {
+		return shark5;
+	}
+	
 	
 	public void setX(int xV) {
 		x=xV;
@@ -95,5 +102,29 @@ public class Object {
 				dy*= -1; 
 		}
 	}
+		
+		public void moveShark4() {
+			x+=dx;
+			y+=dy;
+			//System.out.println("x=" + x);
+			
+			if (x >= 773 || x <=550) {
+				dx*= -1;
+			}
+			if (y >= 480 || y <= 400) {
+				dy*= -1; 
+		}}
+		
+		public void moveShark5() {
+			x+=dx;
+			y+=dy;
+			//System.out.println("x=" + x);
+			
+			if (x >= 773 || x <=550) {
+				dx*= -1;
+			}
+			if (y >= 480 || y <= 400) {
+				dy*= -1; 
+		}}
 	
 }
