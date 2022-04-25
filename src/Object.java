@@ -15,6 +15,8 @@ public class Object {
 		shark1 = "shark 1.png";
 		shark2 = "shark 2.png";
 		shark3 = "shark 3.png";
+		shark4 = "shark 4.png";
+		shark5 = "shark 5.png";
 		
 	}
 	
@@ -28,6 +30,8 @@ public class Object {
 		shark1 = "shark 1.png";
 		shark2 = "shark 2.png";
 		shark3 = "shark 3.png";
+		shark4 = "shark 4.png";
+		shark5 = "shark 5.png";
 		
 		
 		
