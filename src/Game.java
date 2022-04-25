@@ -32,13 +32,13 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 		shark8 = new Object(100, 800, 2, 0);
 		
 		shark11 = new ImageIcon (shark1.getshark1());
-		shark22 = new ImageIcon (shark1.getshark2());
-		shark33 = new ImageIcon (shark1.getshark3());
-		shark44 = new ImageIcon (shark1.getshark4());
-		shark55 = new ImageIcon (shark1.getshark5());
-		shark66 = new ImageIcon (shark1.getshark6());
-		shark77 = new ImageIcon (shark1.getshark7());
-		shark88 = new ImageIcon (shark1.getshark8());
+		shark22 = new ImageIcon (shark2.getshark2());
+		shark33 = new ImageIcon (shark3.getshark3());
+		shark44 = new ImageIcon (shark4.getshark4());
+		shark55 = new ImageIcon (shark5.getshark5());
+		shark66 = new ImageIcon (shark6.getshark6());
+		shark77 = new ImageIcon (shark7.getshark7());
+		shark88 = new ImageIcon (shark8.getshark8());
 		
 		
 	}
