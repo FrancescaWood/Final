@@ -8,8 +8,8 @@ public class Object {
 	public Object() {
 		x=600;
 		y=450;
-		w=70;
-		h=70;
+		w=100;
+		h=100;
 		dx=1;
 		dy=1;
 		shark1 = "shark 1.png";
@@ -21,13 +21,14 @@ public class Object {
 		shark7 = "shark 7.png";
 		shark8 = "shark 8.png";
 		
+		
 	}
 	
 	public Object(int xV, int yV, int dxV, int dyV) {
 		x=xV;
 		y=yV;
-		w=70;
-		h=70;
+		w=100;
+		h=100;
 		dx=dxV;
 		dy=dyV;
 		shark1 = "shark 1.png";
