@@ -21,6 +21,7 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 		key =-1; 
 		
 
+<<<<<<< HEAD
 		shark1 = new Object();
 		shark2 = new Object();
 		shark3 = new Object();
@@ -28,16 +29,26 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 		shark5 = new Object();
 		
 
+=======
+>>>>>>> branch 'master' of https://github.com/FrancescaWood/Final
 	//	shark1 = new Object(x, y, spped, 1);
-		shark1 = new Object(100, 200, 2, 0);
-		shark2 = new Object(100, 500, 3, 0);
-		shark3 = new Object(100, 700, 5, 0);
+		shark1 = new Object(100, 100, 2, 0);
+		shark2 = new Object(100, 200, 3, 0);
+		shark3 = new Object(100, 300, 2, 0);
+		shark4 = new Object(100, 400, 1, 0);
+		shark5 = new Object(100, 500, 1, 0);
+		shark6 = new Object(100, 600, 2, 0);
+		shark7 = new Object(100, 700, 3, 0);
+		shark8 = new Object(100, 800, 2, 0);
 		
 		shark11 = new ImageIcon (shark1.getshark1());
 		shark22 = new ImageIcon (shark1.getshark2());
 		shark33 = new ImageIcon (shark1.getshark3());
 		shark44 = new ImageIcon (shark1.getshark4());
 		shark55 = new ImageIcon (shark1.getshark5());
+		shark66 = new ImageIcon (shark1.getshark6());
+		shark77 = new ImageIcon (shark1.getshark7());
+		shark88 = new ImageIcon (shark1.getshark8());
 		
 		
 		
@@ -80,13 +91,20 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 		g2d.drawImage(shark33.getImage(), shark3.getX(), shark3.getY(), shark3.getH(), shark3.getW(), this);
 		g2d.drawImage(shark44.getImage(), shark4.getX(), shark4.getY(), shark4.getH(), shark4.getW(), this);
 		g2d.drawImage(shark55.getImage(), shark5.getX(), shark5.getY(), shark5.getH(), shark5.getW(), this);
-		
+
+		g2d.drawImage(shark66.getImage(), shark6.getX(), shark6.getY(), shark6.getH(), shark6.getW(), this);
+		g2d.drawImage(shark77.getImage(), shark7.getX(), shark7.getY(), shark7.getH(), shark7.getW(), this);
+		g2d.drawImage(shark88.getImage(), shark8.getX(), shark8.getY(), shark8.getH(), shark8.getW(), this);
+
 
 		shark1.moveShark1();
 		shark2.moveShark2();
 		shark3.moveShark3();
 		shark4.moveShark4();
 		shark5.moveShark5();
+		shark6.moveShark6();
+		shark7.moveShark7();
+		shark8.moveShark8();
 		
 		twoDgraph.drawImage(back, null, 0, 0);
 
