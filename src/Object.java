@@ -62,21 +62,21 @@ public class Object {
 		y+=dy;
 		//System.out.println("x=" + x);
 		
-		if (x >= 673 || x <=550) {
+		if (x >= 1500 || x <=20) {
 			dx*= -1;
 		}
-		if (y >= 480 || y <= 380) {
-			dy*= -1; 
+		if (y >= 400 || y <= 300) {
+			dy*= -1;  
 	}}
 	public void moveShark2() {
 		x+=dx;
 		y+=dy;
 		//System.out.println("x=" + x);
 		
-		if (x >= 773 || x <=550) {
+		if (x >= 1500 || x <=20) {
 			dx*= -1;
 		}
-		if (y >= 480 || y <= 400) {
+		if (y >= 300 || y <= 200) {
 			dy*= -1; 
 	}}
 		public void moveShark3() {
@@ -84,10 +84,10 @@ public class Object {
 			y+=dy;
 			//System.out.println("x=" + x);
 			
-			if (x <= 0 || x >=100) {
+			if (x <= 20 || x >=1600) {
 				dx*= -1;
 			}
-			if (y >= 600 || y <= 480) {
+			if (y >= 1300 || y <= 1400) {
 				dy*= -1; 
 		}
 	}
