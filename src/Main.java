@@ -4,7 +4,7 @@ import java.awt.event.*;
 
 public class Main extends JFrame{
 	private static final int WIDTH =1800;
-	private static final int HEIGHT=1600;
+	private static final int HEIGHT=1200;
 	
 	public Main () {
 		super("Final Project");
@@ -12,7 +12,7 @@ public class Main extends JFrame{
 		Game play = new Game();
 		((Component) play).setFocusable(true);
 		
-		Color RoyalBlue = new Color(127,205,255);
+		Color RoyalBlue = new Color(87,175,255);
 		
 		
 		setBackground(RoyalBlue);

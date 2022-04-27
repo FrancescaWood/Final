@@ -10,17 +10,22 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 	
 	private BufferedImage back; 
 	private int key; 
-	private ImageIcon shark11, shark22, shark33, shark44, shark55, shark66, shark77, shark88;
+	private ImageIcon shark11, shark22, shark33, shark44, shark55, shark66, shark77, shark88, boat11;
 	private Object shark1, shark2, shark3, shark4, shark5, shark6, shark7, shark8;
+	private Boat boat1;
 	
-	//new
+
+	
+	private boolean up2, down2 = false;
+	
 	
 	public Game() {
 		new Thread(this).start();	
 		this.addKeyListener(this);
 		key =-1; 
 		
-
+		boat1 = new Boat();
+		boat11 = new ImageIcon (boat1.getBoat1());
 
 		shark1 = new Object();
 		shark2 = new Object();
@@ -30,6 +35,8 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 		shark6 = new Object();
 		shark7 = new Object();
 		shark8 = new Object();
+	
+		
 		
 
 
@@ -107,10 +114,19 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 		shark7.moveShark7();
 		shark8.moveShark8();
 		
+		
+		g2d.drawImage(boat11.getImage(), boat1.getX(), boat1.getY(), boat1.getH(), boat1.getW(), this);
+		
+		
+		boat1.move(up2, down2, getHeight() - boat1.getW());
+
+		
+		
 		twoDgraph.drawImage(back, null, 0, 0);
 
 	}
 
+	
 
 
 
@@ -132,6 +148,11 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 		key= e.getKeyCode();
 		System.out.println(key);
 		
+		if (key == 38) { // Up arrow
+			up2 = true;
+		} else if (key == 40) { // Down arrow
+			down2 = true;
+		}
 		
 	}
 
@@ -140,7 +161,11 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 	@Override
 	public void keyReleased(KeyEvent e) {
 	
-		
+		if  (key == 38) { // Up arrow
+			up2 = false;
+		} else if (key == 40) { // Down arrow
+			down2 = false;
+		}
 		
 		
 	}
