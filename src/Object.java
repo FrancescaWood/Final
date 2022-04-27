@@ -41,8 +41,18 @@ public class Object {
 		shark8 = "shark 8.png";
 		
 		
-		
 	}
+	
+	public Boolean paddleCollison(Boat p) {
+		//if collision 
+		if ((getX()<=(p.getX()+p.getW())) && ((getY()+ getH()>=p.getY())&&(getY()+getH()<=p.getY()+ p.getH()))&&(getX()+getW()>=p.getX()))	{
+		horz();
+		return true; 
+	}
+		return false;
+	}
+	
+	
 	public int getX() {
 		return x;
 	}
@@ -79,6 +89,19 @@ public class Object {
 	public String getshark8() {
 		return shark8;
 	}
+	
+	
+	
+	public void horz () {
+		dx*=-1;
+	}
+	public void vert() {
+		dy*= -1; 
+	}
+	
+	
+	
+	
 	
 	public void setX(int xV) {
 		x=xV;
@@ -123,5 +146,7 @@ public class Object {
 		if (x >= 1600 || x <=20) {
 			dx*= -1;
 		}}
+	
+	
 	
 }

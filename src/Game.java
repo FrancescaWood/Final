@@ -115,19 +115,47 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 		shark8.moveShark8();
 		
 		
+		
 		g2d.drawImage(boat11.getImage(), boat1.getX(), boat1.getY(), boat1.getH(), boat1.getW(), this);
-		
-		
 		boat1.move(up2, down2, getHeight() - boat1.getW());
 
+		collision();
 		
 		
 		twoDgraph.drawImage(back, null, 0, 0);
-
 	}
-
+		//COLOICON CODE
+		public void collision() {
+			if (!shark1.paddleCollison(boat1)&& shark1.getX() < boat1.getX()+shark1.getW())
+			{
+		//	shark1.reset();
+		//	player2.change1Score();
+				}
+		else if (!shark2.paddleCollison(boat1)&& shark2.getX() < boat1.getX()+shark2.getW()){
+			
+				}
+		else if (!shark3.paddleCollison(boat1)&& shark3.getX() < boat1.getX()+shark3.getW()){
+				
+			}
+		else if (!shark4.paddleCollison(boat1)&& shark4.getX() < boat1.getX()+shark4.getW()){
+				
+				}
+		else if (!shark5.paddleCollison(boat1)&& shark5.getX() < boat1.getX()+shark5.getW()){
+		
+				}
+		else if (!shark6.paddleCollison(boat1)&& shark6.getX() < boat1.getX()+shark6.getW()){
+				
+				}
+		else if (!shark7.paddleCollison(boat1)&& shark7.getX() < boat1.getX()+shark7.getW()){
+				
+				}
+		else if (!shark8.paddleCollison(boat1)&& shark8.getX() < boat1.getX()+shark8.getW()){
+				
+				}
+		}
 	
 
+	
 
 
 
