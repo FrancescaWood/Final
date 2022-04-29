@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 import java.awt.event.*; 
 
 
-public class Game  extends JPanel implements Runnable, KeyListener{
+public class Game2  extends JPanel implements Runnable, KeyListener{
 
 	
 	private BufferedImage back; 
@@ -19,7 +19,7 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 	private boolean up2, down2 = false;
 	
 	
-	public Game() {
+	public Game2() {
 		new Thread(this).start();	
 		this.addKeyListener(this);
 		key =-1; 
@@ -126,32 +126,49 @@ public class Game  extends JPanel implements Runnable, KeyListener{
 	}
 		//COLOICON CODE
 		public void collision() {
+			
+			System.out.println("test");
+			
+			if(!shark1.collision(boat1));
+			if(!shark2.collision(boat1));
+			if(!shark3.collision(boat1));
+			if(!shark4.collision(boat1));
+			if(!shark5.collision(boat1));
+			if(!shark6.collision(boat1));
+			if(!shark7.collision(boat1));
+			if(!shark8.collision(boat1));
+			
+			
+		
 			if (!shark1.paddleCollison(boat1)&& shark1.getX() < boat1.getX()+shark1.getW())
 			{
 		//	shark1.reset();
-		//	player2.change1Score();
 				}
-		else if (!shark2.paddleCollison(boat1)&& shark2.getX() < boat1.getX()+shark2.getW()){
+		
+		 if (!shark2.paddleCollison(boat1)&& shark2.getX() < boat1.getX()+shark2.getW()){
 			
 				}
-		else if (!shark3.paddleCollison(boat1)&& shark3.getX() < boat1.getX()+shark3.getW()){
+		 if (!shark3.paddleCollison(boat1)&& shark3.getX() < boat1.getX()+shark3.getW()){
 				
 			}
-		else if (!shark4.paddleCollison(boat1)&& shark4.getX() < boat1.getX()+shark4.getW()){
+		if (!shark4.paddleCollison(boat1)&& shark4.getX() < boat1.getX()+shark4.getW()){
 				
 				}
-		else if (!shark5.paddleCollison(boat1)&& shark5.getX() < boat1.getX()+shark5.getW()){
+		 if (!shark5.paddleCollison(boat1)&& shark5.getX() < boat1.getX()+shark5.getW()){
 		
 				}
-		else if (!shark6.paddleCollison(boat1)&& shark6.getX() < boat1.getX()+shark6.getW()){
+		 if (!shark6.paddleCollison(boat1)&& shark6.getX() < boat1.getX()+shark6.getW()){
 				
 				}
-		else if (!shark7.paddleCollison(boat1)&& shark7.getX() < boat1.getX()+shark7.getW()){
+		 if (!shark7.paddleCollison(boat1)&& shark7.getX() < boat1.getX()+shark7.getW()){
 				
 				}
-		else if (!shark8.paddleCollison(boat1)&& shark8.getX() < boat1.getX()+shark8.getW()){
+		 if (!shark8.paddleCollison(boat1)&& shark8.getX() < boat1.getX()+shark8.getW()){
 				
 				}
+				
+				
+		
 		}
 	
 

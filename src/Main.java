@@ -9,7 +9,7 @@ public class Main extends JFrame{
 	public Main () {
 		super("Final Project");
 		setSize(WIDTH, HEIGHT);
-		Game play = new Game();
+		Game2 play = new Game2();
 		((Component) play).setFocusable(true);
 		
 		Color RoyalBlue = new Color(87,175,255);

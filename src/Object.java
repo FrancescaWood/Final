@@ -1,3 +1,4 @@
+import java.awt.Rectangle;
 
 public class Object {
 
@@ -47,12 +48,30 @@ public class Object {
 		//if collision 
 		if ((getX()<=(p.getX()+p.getW())) && ((getY()+ getH()>=p.getY())&&(getY()+getH()<=p.getY()+ p.getH()))&&(getX()+getW()>=p.getX()))	{
 		horz();
+		System.out.println("collision");
 		return true; 
 	}
 		return false;
 	}
 	
-	
+	public Boolean collision(Boat b) {
+		
+		Rectangle boat = new Rectangle(b.getX(), b.getW(), b.getW(), b.getH());
+		Rectangle Shark = new Rectangle(x,y,w,y);
+		
+		System.out.println("boat x" + b.getX());
+		System.out.println("boat y" + b.getY());
+		System.out.println("boat w" + b.getW());
+		System.out.println("boat h" + b.getH());
+		if(boat.intersects(Shark)) {
+			
+			System.out.println("collision");
+			
+			
+			return true;
+		}
+		return false;
+	}
 	public int getX() {
 		return x;
 	}
