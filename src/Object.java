@@ -9,8 +9,8 @@ public class Object {
 	public Object() {
 		x=600;
 		y=450;
-		w=100;
-		h=100;
+		w=80;
+		h=80;
 		dx=1;
 		dy=1;
 		shark1 = "shark 1.png";
@@ -44,7 +44,7 @@ public class Object {
 		
 	}
 	
-	public Boolean paddleCollison(Boat p) {
+	/*public Boolean paddleCollison(Boat p) {
 		//if collision 
 		if ((getX()<=(p.getX()+p.getW())) && ((getY()+ getH()>=p.getY())&&(getY()+getH()<=p.getY()+ p.getH()))&&(getX()+getW()>=p.getX()))	{
 		horz();
@@ -53,21 +53,16 @@ public class Object {
 	}
 		return false;
 	}
-	
+	*/
 	public Boolean collision(Boat b) {
 		
 		Rectangle boat = new Rectangle(b.getX(), b.getW(), b.getW(), b.getH());
 		Rectangle Shark = new Rectangle(x,y,w,y);
 		
-		System.out.println("boat x" + b.getX());
-		System.out.println("boat y" + b.getY());
-		System.out.println("boat w" + b.getW());
-		System.out.println("boat h" + b.getH());
 		if(boat.intersects(Shark)) {
-			
-			System.out.println("collision");
-			
-			
+			//horz();
+			System.out.println("working");
+
 			return true;
 		}
 		return false;

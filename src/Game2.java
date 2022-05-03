@@ -137,13 +137,17 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 			if(!shark6.collision(boat1));
 			if(!shark7.collision(boat1));
 			if(!shark8.collision(boat1));
-			
+		
 			
 		
-			if (!shark1.paddleCollison(boat1)&& shark1.getX() < boat1.getX()+shark1.getW())
+			if (!shark1.collison(boat1)&& shark1.getX() < boat1.getX()+shark1.getW())
 			{
 		//	shark1.reset();
 				}
+	
+		if (!shark1.paddleCollison(boat1)&& shark1.getX() + boat1.getW()> shark1.getX()){
+			
+		}
 		
 		 if (!shark2.paddleCollison(boat1)&& shark2.getX() < boat1.getX()+shark2.getW()){
 			
@@ -171,7 +175,6 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 		
 		}
 	
-
 	
 
 
