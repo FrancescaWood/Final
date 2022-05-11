@@ -11,7 +11,7 @@ public class Boat {
 		x= 350;
 		y=900;
 		width=80;
-		height=80;
+		height=60;
 		dx = 1;
 		dy = 1;
 		boat1 = "boat1111-removebg-preview.png";
@@ -23,7 +23,7 @@ public class Boat {
 		x=xV;
 		y=300;
 		width=80;
-		height=80;
+		height=60;
 		boat1 = "boat1111-removebg-preview.png";
 		score=0;
 		dx = 1;

@@ -85,21 +85,26 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 	
 		g2d.clearRect(0,0,getSize().width, getSize().height);
 		
+		
 		g2d.drawImage(shark11.getImage(), shark1.getX(), shark1.getY(), shark1.getH(), shark1.getW(), this);
 		g2d.drawImage(shark22.getImage(), shark2.getX(), shark2.getY(), shark2.getH(), shark2.getW(), this);
 		g2d.drawImage(shark33.getImage(), shark3.getX(), shark3.getY(), shark3.getH(), shark3.getW(), this);
 		g2d.drawImage(shark44.getImage(), shark4.getX(), shark4.getY(), shark4.getH(), shark4.getW(), this);
 		g2d.drawImage(shark55.getImage(), shark5.getX(), shark5.getY(), shark5.getH(), shark5.getW(), this);
+		
+		
 		g2d.drawImage(shark66.getImage(), shark6.getX(), shark6.getY(), shark6.getH(), shark6.getW(), this);
 		g2d.drawImage(shark77.getImage(), shark7.getX(), shark7.getY(), shark7.getH(), shark7.getW(), this);
 		g2d.drawImage(shark88.getImage(), shark8.getX(), shark8.getY(), shark8.getH(), shark8.getW(), this);
 
 
-		shark1.moveShark();
+		 shark1.moveShark();
+		
 		shark2.moveShark();
 		shark3.moveShark();
 		shark4.moveShark();
 		shark5.moveShark();
+		 
 		shark6.moveShark();
 		shark7.moveShark();
 		shark8.moveShark();
@@ -119,13 +124,17 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 			
 			//System.out.println("test");
 			
+			
 			if(!shark1.collision(boat1));
 			if(!shark2.collision(boat1));
 			if(!shark3.collision(boat1));
 			if(!shark4.collision(boat1));
 			if(!shark5.collision(boat1));
+			
 			if(!shark6.collision(boat1));
 			if(!shark7.collision(boat1));
+			
+			
 			if(!shark8.collision(boat1));
 		
 			
