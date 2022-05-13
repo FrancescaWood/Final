@@ -16,7 +16,7 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 	
 
 	
-	private boolean up2, down2 = false;
+	private boolean up2, down2, right, left = false;
 	
 	
 	public Game2() {
@@ -38,7 +38,7 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 		shark5 = new Object(100, 450, 3, 0);
 		shark6 = new Object(100, 550, 2, 0);
 		shark7 = new Object(100, 650, 1, 0);
-		shark8 = new Object(100, 750, 5, 0);
+		shark8 = new Object(100, 750, 2, 0);
 		
 		shark11 = new ImageIcon (shark1.getshark1());
 		shark22 = new ImageIcon (shark2.getshark2());
@@ -72,9 +72,13 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 	
 	
 	
-	//	if (collision()) {
-	//		boat1.setX(dx);
-	//	}
+		
+
+		
+	public void resetGame () {
+		boat1.setX(350);
+		boat1.setY(900);
+	}
 	
 	
 	
@@ -88,6 +92,9 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 		Graphics g2d = back.createGraphics();
 	
 		g2d.clearRect(0,0,getSize().width, getSize().height);
+		
+
+	
 		
 		
 		g2d.drawImage(shark11.getImage(), shark1.getX(), shark1.getY(), shark1.getH(), shark1.getW(), this);
@@ -114,28 +121,35 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 		
 		
 		
+		
+		
 		g2d.drawImage(boat11.getImage(), boat1.getX(), boat1.getY(), boat1.getH(), boat1.getW(), this);
-		boat1.move(up2, down2, getHeight() - boat1.getW());
+	
+		//boat1.move(up2, down2, getHeight() - boat1.getW());
+		boat1.move(up2, down2, right, left, getHeight() - boat1.getH(), getWidth()- boat1.getW() );
+	
 
-		collision();
+		//collision();
+		
+		if (collision()) {
+			resetGame();
+	}
+		
+		
 		
 		
 		twoDgraph.drawImage(back, null, 0, 0);
 	}
 		//COLOICON CODE
-		public void collision() {
+		public boolean collision() {
 			
+			if(shark1.collision(boat1) || shark2.collision(boat1) || shark3.collision(boat1) || shark4.collision(boat1) || shark5.collision(boat1)|| shark6.collision(boat1)|| shark7.collision(boat1)|| shark8.collision(boat1)) {
 			
-			if(!shark1.collision(boat1));
-			if(!shark2.collision(boat1));
-			if(!shark3.collision(boat1));
-			if(!shark4.collision(boat1));
-			if(!shark5.collision(boat1));
-			if(!shark6.collision(boat1));
-			if(!shark7.collision(boat1));
-			if(!shark8.collision(boat1));
+			return true;
+		} 
 		
-		}
+		return false;
+			}
 	
 	
 
@@ -162,24 +176,30 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 			up2 = true;
 		} else if (key == 40) { // Down arrow
 			down2 = true;
+		} else if (key == 39) { // right arrow
+			right = true;
+		} else if (key == 37) { // left arrow
+			left = true;
 		}
 		
 	
 		
-		if (key==32) {
-			boat1.setX(350);
-		
-	}}
+	
+	}
 
 
 
 	@Override
 	public void keyReleased(KeyEvent e) {
 	
-		if  (key == 38) { // Up arrow
+		if (key == 38) { // Up arrow
 			up2 = false;
 		} else if (key == 40) { // Down arrow
 			down2 = false;
+		} else if (key == 39) { // right arrow
+			right = false;
+		} else if (key == 37) { // left arrow
+			left = false;
 		}
 		
 		
