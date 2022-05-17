@@ -8,10 +8,10 @@ public class Boat {
 	private String boat1;
 	
 	public Boat() {
-		x= 850;
+		x= 350;
 		y=900;
-		width=100;
-		height=100;
+		width=80;
+		height=80;
 		dx = 1;
 		dy = 1;
 		boat1 = "boat1111-removebg-preview.png";
@@ -22,8 +22,8 @@ public class Boat {
 	public Boat(int xV) {
 		x=xV;
 		y=300;
-		width=30;
-		height=200;
+		width=80;
+		height=80;
 		boat1 = "boat1111-removebg-preview.png";
 		score=0;
 		dx = 1;

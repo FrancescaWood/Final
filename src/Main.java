@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Main extends JFrame{
-	private static final int WIDTH =1800;
+	private static final int WIDTH =800;
 	private static final int HEIGHT=1200;
 	
 	public Main () {

@@ -27,17 +27,7 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 		boat1 = new Boat();
 		boat11 = new ImageIcon (boat1.getBoat1());
 
-		shark1 = new Object();
-		shark2 = new Object();
-		shark3 = new Object();
-		shark4 = new Object();
-		shark5 = new Object();
-		shark6 = new Object();
-		shark7 = new Object();
-		shark8 = new Object();
 	
-		
-		
 
 
 	//	shark1 = new Object(x, y, spped, 1);
@@ -105,14 +95,14 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 		g2d.drawImage(shark88.getImage(), shark8.getX(), shark8.getY(), shark8.getH(), shark8.getW(), this);
 
 
-		shark1.moveShark1();
-		shark2.moveShark2();
-		shark3.moveShark3();
-		shark4.moveShark4();
-		shark5.moveShark5();
-		shark6.moveShark6();
-		shark7.moveShark7();
-		shark8.moveShark8();
+		shark1.moveShark();
+		shark2.moveShark();
+		shark3.moveShark();
+		shark4.moveShark();
+		shark5.moveShark();
+		shark6.moveShark();
+		shark7.moveShark();
+		shark8.moveShark();
 		
 		
 		
@@ -127,7 +117,7 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 		//COLOICON CODE
 		public void collision() {
 			
-			System.out.println("test");
+			//System.out.println("test");
 			
 			if(!shark1.collision(boat1));
 			if(!shark2.collision(boat1));
@@ -137,41 +127,46 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 			if(!shark6.collision(boat1));
 			if(!shark7.collision(boat1));
 			if(!shark8.collision(boat1));
-			
-			
 		
-			if (!shark1.paddleCollison(boat1)&& shark1.getX() < boat1.getX()+shark1.getW())
+			
+	/*	
+		if (!shark1.collision(boat1));
+			
+			//&& shark1.getX() < boat1.getX()+shark1.getW())
 			{
 		//	shark1.reset();
 				}
+	
+		if (!shark1.collision(boat1)&& shark1.getX() + boat1.getW()> shark1.getX()){
+			
+		}
 		
-		 if (!shark2.paddleCollison(boat1)&& shark2.getX() < boat1.getX()+shark2.getW()){
+		 if (!shark2.collision(boat1)&& shark2.getX() < boat1.getX()+shark2.getW()){
 			
 				}
-		 if (!shark3.paddleCollison(boat1)&& shark3.getX() < boat1.getX()+shark3.getW()){
+		 if (!shark3.collision(boat1)&& shark3.getX() < boat1.getX()+shark3.getW()){
 				
 			}
-		if (!shark4.paddleCollison(boat1)&& shark4.getX() < boat1.getX()+shark4.getW()){
+		if (!shark4.collision(boat1)&& shark4.getX() < boat1.getX()+shark4.getW()){
 				
 				}
-		 if (!shark5.paddleCollison(boat1)&& shark5.getX() < boat1.getX()+shark5.getW()){
+		 if (!shark5.collision(boat1)&& shark5.getX() < boat1.getX()+shark5.getW()){
 		
 				}
-		 if (!shark6.paddleCollison(boat1)&& shark6.getX() < boat1.getX()+shark6.getW()){
+		 if (!shark6.collision(boat1)&& shark6.getX() < boat1.getX()+shark6.getW()){
 				
 				}
-		 if (!shark7.paddleCollison(boat1)&& shark7.getX() < boat1.getX()+shark7.getW()){
+		 if (!shark7.collision(boat1)&& shark7.getX() < boat1.getX()+shark7.getW()){
 				
 				}
-		 if (!shark8.paddleCollison(boat1)&& shark8.getX() < boat1.getX()+shark8.getW()){
+		 if (!shark8.collision(boat1)&& shark8.getX() < boat1.getX()+shark8.getW()){
 				
 				}
 				
 				
-		
+		*/
 		}
 	
-
 	
 
 

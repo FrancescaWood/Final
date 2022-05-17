@@ -9,8 +9,8 @@ public class Object {
 	public Object() {
 		x=600;
 		y=450;
-		w=100;
-		h=100;
+		w=60;
+		h=60;
 		dx=1;
 		dy=1;
 		shark1 = "shark 1.png";
@@ -28,8 +28,8 @@ public class Object {
 	public Object(int xV, int yV, int dxV, int dyV) {
 		x=xV;
 		y=yV;
-		w=100;
-		h=100;
+		w=60;
+		h=60;
 		dx=dxV;
 		dy=dyV;
 		shark1 = "shark 1.png";
@@ -44,7 +44,7 @@ public class Object {
 		
 	}
 	
-	public Boolean paddleCollison(Boat p) {
+	/*public Boolean paddleCollison(Boat p) {
 		//if collision 
 		if ((getX()<=(p.getX()+p.getW())) && ((getY()+ getH()>=p.getY())&&(getY()+getH()<=p.getY()+ p.getH()))&&(getX()+getW()>=p.getX()))	{
 		horz();
@@ -53,21 +53,17 @@ public class Object {
 	}
 		return false;
 	}
-	
+	*/
 	public Boolean collision(Boat b) {
 		
-		Rectangle boat = new Rectangle(b.getX(), b.getW(), b.getW(), b.getH());
+		Rectangle boat = new Rectangle(b.getX(), b.getY(), b.getW(), b.getH());
 		Rectangle Shark = new Rectangle(x,y,w,y);
 		
-		System.out.println("boat x" + b.getX());
-		System.out.println("boat y" + b.getY());
-		System.out.println("boat w" + b.getW());
-		System.out.println("boat h" + b.getH());
+		
+	
 		if(boat.intersects(Shark)) {
-			
-			System.out.println("collision");
-			
-			
+			horz();
+			System.out.println("collision working");
 			return true;
 		}
 		return false;
@@ -113,6 +109,7 @@ public class Object {
 	
 	public void horz () {
 		dx*=-1;
+		
 	}
 	public void vert() {
 		dy*= -1; 
@@ -125,46 +122,12 @@ public class Object {
 	public void setX(int xV) {
 		x=xV;
 	}
-	public void moveShark1() {
+	public void moveShark() {
 		x+=dx;
-		if (x >= 1600 || x <=20) {
+		if (x >= 700 || x <=20) {
 			dx*= -1;
 		}}
-	public void moveShark2() {
-		x+=dx;
-		if (x >= 1600 || x <=20) {
-			dx*= -1;
-		}}
-	public void moveShark3() {
-		x+=dx;
-		if (x <= 20 || x >=1600) {
-			dx*= -1;
-		}}
-	public void moveShark4() {
-		x+=dx;
-		if (x >= 1600 || x <=20) {
-			dx*= -1;
-		}}
-	public void moveShark5() {
-		x+=dx;
-		if (x >= 1600 || x <=20) {
-			dx*= -1;
-		}}
-	public void moveShark6() {
-		x+=dx;
-		if (x >= 1600 || x <=20) {
-			dx*= -1;
-		}}
-	public void moveShark7() {
-		x+=dx;
-		if (x >= 1600 || x <=20) {
-			dx*= -1;
-		}}
-	public void moveShark8() {
-		x+=dx;
-		if (x >= 1600 || x <=20) {
-			dx*= -1;
-		}}
+	
 	
 	
 	
