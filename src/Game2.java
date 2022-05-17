@@ -13,6 +13,7 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 	private ImageIcon shark11, shark22, shark33, shark44, shark55, shark66, shark77, shark88, boat11;
 	private Object shark1, shark2, shark3, shark4, shark5, shark6, shark7, shark8;
 	private Boat boat1;
+	private Boolean hideRect;
 	
 
 	
@@ -26,6 +27,8 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 		
 		boat1 = new Boat();
 		boat11 = new ImageIcon (boat1.getBoat1());
+		
+		hideRect = false;
 
 	
 
@@ -78,7 +81,10 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 	public void resetGame () {
 		boat1.setX(350);
 		boat1.setY(900);
+		
+		
 	}
+		
 	
 	
 	
@@ -120,21 +126,28 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 		shark8.moveShark();
 		
 		
+		if(hideRect) {
+			g2d.drawRect(150, 300, 500, 400);
+			g2d.fillRect(150, 300, 500, 400);
+			Color Lblue = new Color(173,216,230);
+			g2d.setColor(Lblue);
+			g2d.drawString("Oh No! You Ran Into a Shark!", 350, 500);
+		}
 		
 		
 		
 		g2d.drawImage(boat11.getImage(), boat1.getX(), boat1.getY(), boat1.getH(), boat1.getW(), this);
 	
-		//boat1.move(up2, down2, getHeight() - boat1.getW());
+		
 		boat1.move(up2, down2, right, left, getHeight() - boat1.getH(), getWidth()- boat1.getW() );
 	
 
 		//collision();
 		
 		if (collision()) {
-			resetGame();
+		hideRect = true;
 	}
-		
+		//resetGame();
 		
 		
 		
@@ -182,7 +195,10 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 			left = true;
 		}
 		
-	
+	 if(key == 32) {
+		resetGame();	
+		hideRect = false;
+		}
 		
 	
 	}
@@ -202,6 +218,12 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 			left = false;
 		}
 		
+		 if(key == 32) {
+			resetGame();	
+			hideRect = false;
+			}
+				
+			
 		
 	}
 	
