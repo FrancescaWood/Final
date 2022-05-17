@@ -56,18 +56,19 @@ public class Object {
 	*/
 	public Boolean collision(Boat b) {
 		
-		Rectangle boat = new Rectangle(b.getX(), b.getY(), b.getW(), b.getH());
-		Rectangle Shark = new Rectangle(x,y,w,y);
-		
+		Rectangle boat = new Rectangle(b.getX(), b.getY(), b.getW()-20, b.getH()-12);
+		Rectangle Shark = new Rectangle(x,y,w,h);
 		
 	
 		if(boat.intersects(Shark)) {
 			horz();
-			System.out.println("collision working");
+		
 			return true;
 		}
 		return false;
 	}
+	
+	
 	public int getX() {
 		return x;
 	}
@@ -126,7 +127,8 @@ public class Object {
 		x+=dx;
 		if (x >= 700 || x <=20) {
 			dx*= -1;
-		}}
+		}
+		}
 	
 	
 	

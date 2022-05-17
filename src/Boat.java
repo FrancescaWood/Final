@@ -11,7 +11,7 @@ public class Boat {
 		x= 350;
 		y=900;
 		width=80;
-		height=80;
+		height=60;
 		dx = 1;
 		dy = 1;
 		boat1 = "boat1111-removebg-preview.png";
@@ -23,7 +23,7 @@ public class Boat {
 		x=xV;
 		y=300;
 		width=80;
-		height=80;
+		height=60;
 		boat1 = "boat1111-removebg-preview.png";
 		score=0;
 		dx = 1;
@@ -64,14 +64,21 @@ public class Boat {
 	}
 
 	public void setX(int dx) {
-		x+=dx;
+		x=dx;
+	}
+	public void setY(int dy) {
+		y=dy;
 	}
 	
-	public void move(boolean up, boolean down, int windowheight) {
+	public void move(boolean up, boolean down, boolean right, boolean left, int windowheight, int windowwidth) {
 		if (up == true && y > 1) {
 			y -= dy;
 		} else if (down == true && y < windowheight) {
 			y += dy;
+		} else if (right == true && x > 1) {
+			x += dx;
+		} else if (left == true && x < windowwidth) {
+			x -= dx;
 		}
 	}
 	

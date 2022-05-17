@@ -16,7 +16,7 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 	
 
 	
-	private boolean up2, down2 = false;
+	private boolean up2, down2, right, left = false;
 	
 	
 	public Game2() {
@@ -38,7 +38,7 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 		shark5 = new Object(100, 450, 3, 0);
 		shark6 = new Object(100, 550, 2, 0);
 		shark7 = new Object(100, 650, 1, 0);
-		shark8 = new Object(100, 750, 5, 0);
+		shark8 = new Object(100, 750, 2, 0);
 		
 		shark11 = new ImageIcon (shark1.getshark1());
 		shark22 = new ImageIcon (shark2.getshark2());
@@ -70,7 +70,15 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 	      }
 	  	}
 	
+	
+	
+		
 
+		
+	public void resetGame () {
+		boat1.setX(350);
+		boat1.setY(900);
+	}
 	
 	
 	
@@ -85,11 +93,17 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 	
 		g2d.clearRect(0,0,getSize().width, getSize().height);
 		
+
+	
+		
+		
 		g2d.drawImage(shark11.getImage(), shark1.getX(), shark1.getY(), shark1.getH(), shark1.getW(), this);
 		g2d.drawImage(shark22.getImage(), shark2.getX(), shark2.getY(), shark2.getH(), shark2.getW(), this);
 		g2d.drawImage(shark33.getImage(), shark3.getX(), shark3.getY(), shark3.getH(), shark3.getW(), this);
 		g2d.drawImage(shark44.getImage(), shark4.getX(), shark4.getY(), shark4.getH(), shark4.getW(), this);
 		g2d.drawImage(shark55.getImage(), shark5.getX(), shark5.getY(), shark5.getH(), shark5.getW(), this);
+		
+		
 		g2d.drawImage(shark66.getImage(), shark6.getX(), shark6.getY(), shark6.getH(), shark6.getW(), this);
 		g2d.drawImage(shark77.getImage(), shark7.getX(), shark7.getY(), shark7.getH(), shark7.getW(), this);
 		g2d.drawImage(shark88.getImage(), shark8.getX(), shark8.getY(), shark8.getH(), shark8.getW(), this);
@@ -100,72 +114,42 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 		shark3.moveShark();
 		shark4.moveShark();
 		shark5.moveShark();
+		 
 		shark6.moveShark();
 		shark7.moveShark();
 		shark8.moveShark();
 		
 		
 		
+		
+		
 		g2d.drawImage(boat11.getImage(), boat1.getX(), boat1.getY(), boat1.getH(), boat1.getW(), this);
-		boat1.move(up2, down2, getHeight() - boat1.getW());
+	
+		//boat1.move(up2, down2, getHeight() - boat1.getW());
+		boat1.move(up2, down2, right, left, getHeight() - boat1.getH(), getWidth()- boat1.getW() );
+	
 
-		collision();
+		//collision();
+		
+		if (collision()) {
+			resetGame();
+	}
+		
+		
 		
 		
 		twoDgraph.drawImage(back, null, 0, 0);
 	}
 		//COLOICON CODE
-		public void collision() {
+		public boolean collision() {
 			
-			//System.out.println("test");
+			if(shark1.collision(boat1) || shark2.collision(boat1) || shark3.collision(boat1) || shark4.collision(boat1) || shark5.collision(boat1)|| shark6.collision(boat1)|| shark7.collision(boat1)|| shark8.collision(boat1)) {
 			
-			if(!shark1.collision(boat1));
-			if(!shark2.collision(boat1));
-			if(!shark3.collision(boat1));
-			if(!shark4.collision(boat1));
-			if(!shark5.collision(boat1));
-			if(!shark6.collision(boat1));
-			if(!shark7.collision(boat1));
-			if(!shark8.collision(boat1));
+			return true;
+		} 
 		
-			
-	/*	
-		if (!shark1.collision(boat1));
-			
-			//&& shark1.getX() < boat1.getX()+shark1.getW())
-			{
-		//	shark1.reset();
-				}
-	
-		if (!shark1.collision(boat1)&& shark1.getX() + boat1.getW()> shark1.getX()){
-			
-		}
-		
-		 if (!shark2.collision(boat1)&& shark2.getX() < boat1.getX()+shark2.getW()){
-			
-				}
-		 if (!shark3.collision(boat1)&& shark3.getX() < boat1.getX()+shark3.getW()){
-				
+		return false;
 			}
-		if (!shark4.collision(boat1)&& shark4.getX() < boat1.getX()+shark4.getW()){
-				
-				}
-		 if (!shark5.collision(boat1)&& shark5.getX() < boat1.getX()+shark5.getW()){
-		
-				}
-		 if (!shark6.collision(boat1)&& shark6.getX() < boat1.getX()+shark6.getW()){
-				
-				}
-		 if (!shark7.collision(boat1)&& shark7.getX() < boat1.getX()+shark7.getW()){
-				
-				}
-		 if (!shark8.collision(boat1)&& shark8.getX() < boat1.getX()+shark8.getW()){
-				
-				}
-				
-				
-		*/
-		}
 	
 	
 
@@ -192,8 +176,15 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 			up2 = true;
 		} else if (key == 40) { // Down arrow
 			down2 = true;
+		} else if (key == 39) { // right arrow
+			right = true;
+		} else if (key == 37) { // left arrow
+			left = true;
 		}
 		
+	
+		
+	
 	}
 
 
@@ -201,10 +192,14 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 	@Override
 	public void keyReleased(KeyEvent e) {
 	
-		if  (key == 38) { // Up arrow
+		if (key == 38) { // Up arrow
 			up2 = false;
 		} else if (key == 40) { // Down arrow
 			down2 = false;
+		} else if (key == 39) { // right arrow
+			right = false;
+		} else if (key == 37) { // left arrow
+			left = false;
 		}
 		
 		
