@@ -1,7 +1,9 @@
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage; 
+import java.awt.image.BufferedImage;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.awt.event.*; 
 
 
@@ -14,6 +16,7 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 	private Object shark1, shark2, shark3, shark4, shark5, shark6, shark7, shark8;
 	private Boat boat1;
 	private Boolean hideRect;
+	private ArrayList <Fact> randFact;
 	
 
 	
@@ -29,6 +32,14 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 		boat11 = new ImageIcon (boat1.getBoat1());
 		
 		hideRect = false;
+		
+		try {
+	//		randfact= setFact("4th Period.txt");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			System.out.println(e);
+		}
+			
 
 	
 
