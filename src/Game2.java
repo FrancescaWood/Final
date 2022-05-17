@@ -124,6 +124,8 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 		shark6.moveShark();
 		shark7.moveShark();
 		shark8.moveShark();
+	
+		g2d.drawImage(boat11.getImage(), boat1.getX(), boat1.getY(), boat1.getH(), boat1.getW(), this);
 		
 		
 		if(hideRect) {
@@ -136,7 +138,7 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 		
 		
 		
-		g2d.drawImage(boat11.getImage(), boat1.getX(), boat1.getY(), boat1.getH(), boat1.getW(), this);
+		
 	
 		
 		boat1.move(up2, down2, right, left, getHeight() - boat1.getH(), getWidth()- boat1.getW() );
