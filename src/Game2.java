@@ -2,8 +2,10 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.awt.event.*; 
 
 
@@ -16,7 +18,7 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 	private Object shark1, shark2, shark3, shark4, shark5, shark6, shark7, shark8;
 	private Boat boat1;
 	private Boolean hideRect;
-	private ArrayList <Fact> randFact;
+	private ArrayList <Facts> randFact;
 	
 
 	
@@ -34,15 +36,12 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 		hideRect = false;
 		
 		try {
-	//		randfact= setFact("4th Period.txt");
+			randFact= setFact("shark facts.txt");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 			System.out.println(e);
 		}
 			
-
-	
-
 
 	//	shark1 = new Object(x, y, spped, 1);
 		shark1 = new Object(100, 50, 1, 0);
@@ -67,6 +66,17 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 		
 	}
 
+	
+	public ArrayList <Facts> setFact(String fileName) throws FileNotFoundException {
+		ArrayList <Facts> temp = new ArrayList <Facts> ();
+		File file = new File(fileName);
+		Scanner sc = new Scanner(file);
+		
+		while(sc.hasNextLine()) {
+			temp.add(new Facts(sc.nextLine()));
+		}
+		return temp;
+	}
 	
 	
 	public void run()
@@ -144,10 +154,17 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 			g2d.fillRect(150, 300, 500, 400);
 			Color Lblue = new Color(173,216,230);
 			g2d.setColor(Lblue);
-			g2d.drawString("Oh No! You Ran Into a Shark!", 350, 500);
+			g2d.setFont(new Font("Castellar", Font.PLAIN, 30) );
+			g2d.drawString("Oh No! You hit a shark!", 170, 330);
+			g2d.setFont(new Font("Broadway", Font.PLAIN, 15) );
+			g2d.drawString("Did you know?", 170, 360);
+			g2d.setFont(new Font("Broadway", Font.PLAIN, 20) );
+//			g2d.drawString(randFact.get( ).getFact(), 170, 380);
 		}
 		
-		
+		//in teh parenisis randmonnumber meethod 
+		//also substring - seprte facts
+		//sonman method 
 		
 		
 	
