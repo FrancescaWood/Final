@@ -44,16 +44,7 @@ public class Object {
 		
 	}
 	
-	/*public Boolean paddleCollison(Boat p) {
-		//if collision 
-		if ((getX()<=(p.getX()+p.getW())) && ((getY()+ getH()>=p.getY())&&(getY()+getH()<=p.getY()+ p.getH()))&&(getX()+getW()>=p.getX()))	{
-		horz();
-		System.out.println("collision");
-		return true; 
-	}
-		return false;
-	}
-	*/
+	
 	public Boolean collision(Boat b) {
 		
 		Rectangle boat = new Rectangle(b.getX(), b.getY(), b.getW()-20, b.getH()-12);
