@@ -5,6 +5,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 import java.awt.event.*; 
 
@@ -13,7 +14,7 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 
 	
 	private BufferedImage back; 
-	private int key; 
+	private int key, randomFact; 
 	private ImageIcon shark11, shark22, shark33, shark44, shark55, shark66, shark77, shark88, boat11;
 	private Object shark1, shark2, shark3, shark4, shark5, shark6, shark7, shark8;
 	private Boat boat1;
@@ -34,6 +35,7 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 		boat11 = new ImageIcon (boat1.getBoat1());
 		
 		hideRect = false;
+		randomFact = randomNumber();
 		
 		try {
 			randFact= setFact("shark facts.txt");
@@ -128,9 +130,7 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 		g2d.drawImage(shark22.getImage(), shark2.getX(), shark2.getY(), shark2.getH(), shark2.getW(), this);
 		g2d.drawImage(shark33.getImage(), shark3.getX(), shark3.getY(), shark3.getH(), shark3.getW(), this);
 		g2d.drawImage(shark44.getImage(), shark4.getX(), shark4.getY(), shark4.getH(), shark4.getW(), this);
-		g2d.drawImage(shark55.getImage(), shark5.getX(), shark5.getY(), shark5.getH(), shark5.getW(), this);
-		
-		
+		g2d.drawImage(shark55.getImage(), shark5.getX(), shark5.getY(), shark5.getH(), shark5.getW(), this);	
 		g2d.drawImage(shark66.getImage(), shark6.getX(), shark6.getY(), shark6.getH(), shark6.getW(), this);
 		g2d.drawImage(shark77.getImage(), shark7.getX(), shark7.getY(), shark7.getH(), shark7.getW(), this);
 		g2d.drawImage(shark88.getImage(), shark8.getX(), shark8.getY(), shark8.getH(), shark8.getW(), this);
@@ -141,17 +141,17 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 		shark3.moveShark();
 		shark4.moveShark();
 		shark5.moveShark();
-		 
 		shark6.moveShark();
 		shark7.moveShark();
 		shark8.moveShark();
 	
 		g2d.drawImage(boat11.getImage(), boat1.getX(), boat1.getY(), boat1.getH(), boat1.getW(), this);
 		
+	
 		
 		if(hideRect) {
-			g2d.drawRect(150, 300, 500, 400);
-			g2d.fillRect(150, 300, 500, 400);
+			g2d.drawRect(150, 300, 570, 200);
+			g2d.fillRect(150, 300, 570, 200);
 			Color Lblue = new Color(173,216,230);
 			g2d.setColor(Lblue);
 			g2d.setFont(new Font("Castellar", Font.PLAIN, 30) );
@@ -159,25 +159,28 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 			g2d.setFont(new Font("Broadway", Font.PLAIN, 15) );
 			g2d.drawString("Did you know?", 170, 360);
 			g2d.setFont(new Font("Broadway", Font.PLAIN, 20) );
-//			g2d.drawString(randFact.get( ).getFact(), 170, 380);
+			g2d.drawString(randFact.get(randomFact).getFact(), 155, 390);
+			g2d.setFont(new Font("Times New Roman", Font.PLAIN, 20) );
+			g2d.drawString("Press SPACE to restart", 170, 450);
+			
+			
 		}
 		
-		//in teh parenisis randmonnumber meethod 
-		//also substring - seprte facts
-		//sonman method 
 		
 		
 	
+		
 		
 		boat1.move(up2, down2, right, left, getHeight() - boat1.getH(), getWidth()- boat1.getW() );
 	
 
-		//collision();
+
 		
 		if (collision()) {
 		hideRect = true;
+		
 	}
-		//resetGame();
+		
 		
 		
 		
@@ -196,7 +199,10 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 	
 	
 
-
+		public int randomNumber() {
+			Random rand = new Random();
+			return rand.nextInt(21);
+		}
 
 	@Override
 	public void keyTyped(KeyEvent e) {
@@ -228,6 +234,7 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 	 if(key == 32) {
 		resetGame();	
 		hideRect = false;
+		randomFact = randomNumber();
 		}
 		
 	
@@ -251,6 +258,7 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 		 if(key == 32) {
 			resetGame();	
 			hideRect = false;
+			randomFact = randomNumber();
 			}
 				
 			

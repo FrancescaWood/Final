@@ -1,3 +1,5 @@
+import java.util.Random;
+
 import javax.swing.ImageIcon;
 
 public class Facts {
@@ -23,6 +25,8 @@ public class Facts {
 		w=0;
 		h=0;	
 	}
+	
+
 	
 	public String toString() {
 		return fact;
