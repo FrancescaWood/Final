@@ -20,6 +20,8 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 	private Boat boat1;
 	private Boolean hideRect;
 	private ArrayList <Facts> randFact;
+	private boolean playmusic;
+	private Player p;
 	
 
 	
@@ -36,6 +38,11 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 		
 		hideRect = false;
 		randomFact = randomNumber();
+		
+		p = new Player();
+		playmusic = true;
+		p.playmusic("bubbles.wav");
+		
 		
 		try {
 			randFact= setFact("shark facts.txt");
@@ -94,11 +101,12 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 	   		catch(Exception e)
 	      {
 	      }
-	  	}
+	   }
 	
 	
 	
-		
+	
+
 
 		
 	public void resetGame () {
@@ -123,7 +131,9 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 		g2d.clearRect(0,0,getSize().width, getSize().height);
 		
 
-	
+		
+		
+		
 		
 		
 		g2d.drawImage(shark11.getImage(), shark1.getX(), shark1.getY(), shark1.getH(), shark1.getW(), this);
@@ -162,17 +172,18 @@ public class Game2  extends JPanel implements Runnable, KeyListener{
 			g2d.drawString(randFact.get(randomFact).getFact(), 155, 390);
 			g2d.setFont(new Font("Times New Roman", Font.PLAIN, 20) );
 			g2d.drawString("Press SPACE to restart", 170, 450);
-			
+			playmusic=false;
 			
 		}
 		
-		
-		
-	
-		
+
 		
 		boat1.move(up2, down2, right, left, getHeight() - boat1.getH(), getWidth()- boat1.getW() );
 	
+//		if (boat1.getY() == 500 ) {
+			
+//			g2d.drawString("YOU WIN", 10, 40);
+//}
 
 
 		
